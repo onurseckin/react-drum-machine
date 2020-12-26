@@ -1,6 +1,6 @@
 {
-  "homepage": "http://onurseckin.github.io/react-template",
-  "name": "react-template",
+  "homepage": "http://onurseckin.github.io/react-drum-machine",
+  "name": "react-drum-machine",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,8 +10,7 @@
     "node-sass": "4.14.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-scripts": "4.0.1",
-    "web-vitals": "^0.2.4"
+    "react-scripts": "4.0.1"
   },
   "husky": {
     "hooks": {
