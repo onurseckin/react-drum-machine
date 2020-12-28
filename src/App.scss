@@ -1,0 +1,30 @@
+.display {
+  margin: 20vh auto;
+  width: 80vw;
+  height: 60vh;
+  border: 1px solid black;
+}
+
+.col {
+  border: 1px solid black;
+  width: 100%;
+  height: 60vh;
+}
+
+.drum-pad-bank {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding: 0;
+}
+
+// .drum-pad {
+//   width: 33%;
+//   height: 33%;
+//   text-align: center;
+//   font-size: 32px;
+//   &:hover {
+//     background-color: navy;
+//     cursor: pointer;
+//   }
+// }
