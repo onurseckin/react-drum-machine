@@ -1,22 +1,22 @@
-import { Button } from 'react-bootstrap'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 
 const DrumPad = (props) => {
-  const { id, keyTrigger, keyCode, audioSource, power } = props
-  let buttonStyle = {
-    width: '33%',
-    height: '33%',
-    textAlign: 'center',
-    fontSize: '32px',
-    '&:hover': { backgroundColor: 'navy', cursor: 'pointer' },
-  }
+  const { id, keyTrigger, keyCode, audioSource, power, volume } = props
+
   const playSound = () => {
     if (power) {
       let sound = document.getElementById(keyTrigger)
+      let label = document.getElementById('label')
       let button = sound.parentElement
+      label.innerText = id
       button.style.backgroundColor = 'navy'
-      setTimeout(() => (button.style.backgroundColor = 'green'), 500)
+      button.style.color = 'white'
+      setTimeout(() => {
+        button.style.backgroundColor = '#d1ecf1'
+        button.style.color = 'black'
+      }, 500)
       sound.currentTime = 0
+      sound.volume = volume
       sound.play()
     }
   }
@@ -31,12 +31,12 @@ const DrumPad = (props) => {
     return () => {
       window.removeEventListener('keydown', handleKeyPress)
     }
-  }, [])
+  }, [power, volume])
   return (
-    <Button id={id} style={buttonStyle} variant='success' active className='drum-pad' onClick={playSound}>
+    <button id={id} className='drum-pad' onClick={playSound}>
       {keyTrigger}
       <audio id={keyTrigger} className='clip' src={audioSource}></audio>
-    </Button>
+    </button>
   )
 }
 

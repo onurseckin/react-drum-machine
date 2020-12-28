@@ -1,30 +1,76 @@
+$primary: #004085;
+$secondary :#e2e3e5;
+$warning: #fff3cd;
+$info: #d1ecf1;
+body {
+  background-color: $info;
+}
+
 .display {
-  margin: 20vh auto;
+  margin: 20% auto;
   width: 80vw;
-  height: 60vh;
-  border: 1px solid black;
+  height: 100%;
+  border: 10px solid $warning;
+  border-radius: 10px;
+  padding: 50px;
+  background-color: $secondary;
 }
 
 .col {
-  border: 1px solid black;
+  border: 10px solid $warning;
+  border-radius: 10px;
   width: 100%;
-  height: 60vh;
-}
-
-.drum-pad-bank {
+  height: 100%;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
-  padding: 0;
+  justify-content: space-between;
+  padding: 10px;
 }
 
-// .drum-pad {
-//   width: 33%;
-//   height: 33%;
-//   text-align: center;
-//   font-size: 32px;
-//   &:hover {
-//     background-color: navy;
-//     cursor: pointer;
-//   }
-// }
+.controls {
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  color: $primary;
+}
+
+.label {
+  text-align: center;
+  width: 100%;
+  margin: 10px 0;
+  font-size: 24px;
+  color: $primary;
+}
+
+.volume-container {
+  display: flex;
+  flex-direction: column;
+  label {
+    @extend .label;
+    margin-bottom: 0;
+    font-size: 24px;
+  }
+  .volume-input {
+    @extend .label;
+    margin-top: 0;
+  }
+}
+
+
+.drum-pad {
+  border-radius: 10px;
+  width: 90%;
+  height: 90%;
+  text-align: center;
+  font-size: 33px;
+  background-color: $info;
+  &:hover {
+    background-color: yellow;
+    cursor: pointer;
+  }
+}
+
+#power {
+  width: 100px;
+  height: 100px;
+}
