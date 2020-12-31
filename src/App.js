@@ -35,6 +35,9 @@ function App() {
   return (
     <Container id='drum-machine' fluid>
       <Container id='display' className='display'>
+        <Alert id='display-title' className='display-title' variant='success'>
+          Drum Machine
+        </Alert>
         <Row>
           <Col xs={12} md={8} className='col drum-pad-bank'>
             {DrumPadRender}

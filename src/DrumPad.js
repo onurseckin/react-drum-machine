@@ -31,7 +31,7 @@ const DrumPad = (props) => {
     return () => {
       window.removeEventListener('keydown', handleKeyPress)
     }
-  }, [power, volume])
+  }, [power, volume]) //eslint-disable-line
   return (
     <button id={id} className='drum-pad' onClick={playSound}>
       {keyTrigger}

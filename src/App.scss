@@ -2,6 +2,7 @@ $primary: #004085;
 $secondary :#e2e3e5;
 $warning: #fff3cd;
 $info: #d1ecf1;
+$dark: #d6d8d9;
 body {
   background-color: $info;
 }
@@ -13,7 +14,16 @@ body {
   border: 10px solid $warning;
   border-radius: 10px;
   padding: 50px;
+  padding-top: 20px;
   background-color: $secondary;
+  .display-title {
+    text-align: center;
+    width: 100%;
+    font-size: 36px;
+    color: $primary;
+    background-color: $dark;
+    border-color: $dark;
+  }
 }
 
 .col {
@@ -62,9 +72,9 @@ body {
   width: 90%;
   height: 90%;
   text-align: center;
-  font-size: 33px;
+  font-size: 41px;
   background-color: $info;
-  &:hover {
+  &:hover{
     background-color: yellow;
     cursor: pointer;
   }
