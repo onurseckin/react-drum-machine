@@ -1,5 +1,5 @@
 # Build a Drum Machine - React Project
-## http://onurseckin.github.io/react-drum-machine
+## https://onurseckin.github.io/react-drum-machine
 
 <img width="1337" alt="react-drum-machine" src="https://user-images.githubusercontent.com/24792165/103398428-8e4e4500-4af1-11eb-96fd-960ab4eec77c.png">
 
