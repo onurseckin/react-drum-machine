@@ -23,6 +23,9 @@ body {
     color: $primary;
     background-color: $dark;
     border-color: $dark;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
@@ -35,6 +38,38 @@ body {
   flex-flow: row wrap;
   justify-content: space-between;
   padding: 10px;
+}
+
+.brands-container {
+  flex-direction: column;
+  border: none;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 7vh;
+  .brands {
+   font-size: 3vw;
+   color: $primary;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .col:nth-of-type(1) {
+    margin-bottom: 3vh !important;
+    &:nth-last-of-type(2) {
+      margin-bottom: 0;
+    }
+  }
+  .brands-container {
+    flex-direction: row;
+    justify-content: flex-start;
+    order: 3;
+    margin-top: 0;
+    padding-top: 1vh;
+    .brands {
+      font-size: 7vw;
+      margin-left: 1vw;
+    }
+  }
 }
 
 .controls {
@@ -55,10 +90,11 @@ body {
 .volume-container {
   display: flex;
   flex-direction: column;
+  min-width: 99%;
   label {
     @extend .label;
     margin-bottom: 0;
-    font-size: 24px;
+    font-size: 30px;
   }
   .volume-input {
     @extend .label;
@@ -72,7 +108,7 @@ body {
   width: 90%;
   height: 90%;
   text-align: center;
-  font-size: 41px;
+  font-size: 44px;
   background-color: $info;
   &:hover{
     background-color: yellow;
@@ -83,3 +119,4 @@ body {
 .switch {
   width: 100px;
 }
+

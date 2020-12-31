@@ -4,6 +4,29 @@ import DrumPad from './DrumPad'
 import { DrumPadFirstBank, DrumPadSecondBank } from './SoundBanks'
 import { useState } from 'react'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMusic, faDrum, faVolumeUp } from '@fortawesome/free-solid-svg-icons'
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+const musicIcon = <FontAwesomeIcon icon={faMusic} />
+const DrumIcon = (key) => <FontAwesomeIcon icon={faDrum} key={key} />
+const volumeIcon = <FontAwesomeIcon icon={faVolumeUp} />
+const linkedinIcon = (
+  <a
+    href='https://www.linkedin.com/in/onurseckin'
+    target='_black'
+    rel='noopener noreferrer'
+    className='linkedinIcon brands'
+  >
+    <FontAwesomeIcon icon={faLinkedin} />
+  </a>
+)
+
+const githubIcon = (
+  <a href='https://github.com/OnurSeckin' target='_black' rel='noopener noreferrer' className='githubIcon brands'>
+    <FontAwesomeIcon icon={faGithub} />
+  </a>
+)
+
 function App() {
   const [power, setPower] = useState(true)
   const [volume, setVolume] = useState(1.0)
@@ -36,13 +59,16 @@ function App() {
     <Container id='drum-machine' fluid>
       <Container id='display' className='display'>
         <Alert id='display-title' className='display-title' variant='success'>
-          Drum Machine
+          <DrumIcon key={1} /> Drum Machine <DrumIcon key={2} />
         </Alert>
         <Row>
           <Col xs={12} md={8} className='col drum-pad-bank'>
             {DrumPadRender}
           </Col>
-          <Col xs={0} md={1}></Col>
+          <Col md={1} className='col brands-container'>
+            {linkedinIcon}
+            {githubIcon}
+          </Col>
           <Col xs={12} md={3} className='col controls'>
             <Form.Check
               style={{ fontSize: 24, textAlign: 'center', lineHeight: 1, color: '#004085' }}
@@ -54,11 +80,11 @@ function App() {
               onChange={handlePower}
             />
             <Alert id='label' className='label' variant='warning'>
-              Label
+              {musicIcon}
             </Alert>
             <div className='volume-container'>
               <label htmlFor='volumeSlider' style={{ color: '#004085' }}>
-                Volume {Math.round(volume * 100)}
+                {volumeIcon} {Math.round(volume * 100)}
               </label>
               <input
                 type='range'
